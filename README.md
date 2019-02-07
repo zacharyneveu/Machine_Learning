@@ -4,6 +4,7 @@ This repo contains my homework assignments for ECE 5640: Machine Learning and Pa
 # Topics (So far)
 + Linear Algebra Review
 + Bayesian Classification
++ Maximimum Likelihood and Bayesian Parameter Estimation
 
 ## This course is in progress! 
 This repo will be updated as the class continues, watch here for updates!
