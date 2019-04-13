@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{times,amsmath,amssymb,amsbsy,url,mathrsfs,upgreek,bm}
+\usepackage{mathptmx,multirow,multicol,mdwlist,latexsym}
+\usepackage{epsfig,wrapfig,subfigure,graphicx,soul}
+\usepackage{color,textcomp,comment,hyperref,float,array}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[linesnumbered]{algorithm2e}
+\usepackage{tikz}
+    \usetikzlibrary{fit,positioning,calc}
+    \usetikzlibrary{patterns,arrows}
+\usepackage{graphicx}
+    \graphicspath{{./}{figures/}}
+
+\title{EECE5644 Spring 2019-- Homework 4} \date{}
+
+\begin{document}
+\maketitle \vspace{-0.5in}
+
+\ul{This assignment is due on Blackboard by 10:00am ET on Sunday, March 17,  2019.} Please submit your solutions on Blackboard in a single PDF file that includes all math, visual and quantitative results (plots, tables, etc), as well as your code (appended after your answers/solutions for each question). Do not submit a *.zip file!  In this PDF file, start your answer for each question on a new page and clearly indicate on this new page which question is being answered. Clearly label axes of plots (use equal scales for axis where appropriate; e.g., using axis equal in Matlab), table rows/columns, and use descriptive captions for results displayed in this fashion.    Whether you use Matlab, Python, or another computing language for your codes, please make use of built-in functions to the maximum possible extent.
+
+
+\section{Data Preparation}
+As the feature vector for each pixel use a 5-dimensional feature vector consisting of normalized vertical and horizontal coordinates of the pixel relative to the top-left corner of the image, as well as normalized red, green, and blue values of the image color at that pixel. Normalize each feature by linearly shifting and scaling the values to the interval $[0,1]$, such that the set of 5-dimensional normalized feature vectors representing each pixel are in the unit-hypercube $[0,1]^5$. 
+
+Review and use the script file {\em loaddata.m} in this folder to implement the above on the colorbird image file. The script also implements PCA on the data.  Produce a Pareto plot to determine the fraction of energy retained by representations of the data using PCA  1 through 5 components.  Create approximations to the original image by using the PCA components and the output of {\em zscore} for 1, 2, 3, 4 and 5 principal components.  Plot images of these approximations along side of the original image.  In your opinion, what is the smallest number of principal components needed to produce a reasonable result?
+
+\section{Unsupervised Clustering on Colorbird Image with Mean Shift}
+Read about the Mean Shift Algorithm on Wikipedia, and pay particular attention to the Gaussian kernel.  
+Study the included file {\em mean\_shift.m} in this folder.  Using the 3-component PCA representation of the features, randomly select 5\% of the feature vectors using the {\em randi} function, and apply mean shift to this selection.  How does your choice of {\em bandw} effect the final number of clusters?  Produce a plot of the terminal number of clusters versus {\em bandw} for various random selections of vectors.  Comment on the reproducibility of these results versus new random selection of vectors.  What is the minimum number of clusters that accurately approximates the data?  (Note that pixel position is a feature component.)
+
+\section{Colorbird Image Segmentation with Unsupervised Clustering: KNN }
+
+Read about the K-Means Algorithm on Wikipedia. Using the K-Means clustering algorithm with minimum Euclidean-distance-based assignments of samples to cluster centroids, segment the attached color image into $K \in \{2,3,4,5\}$ segments.  For each $K \in \{2,3,4,5\}$, let the algorithm assign labels to each pixel; specifically, label $l_{rc} \in \{1,...,K\}$ to the pixel located at row $r$ and column $c$. Present your clustering results in the form of an image of these label values. Make sure you improve this segmentation outcome visualization by using a contrast enhancement method; for instance, assign a unique color value to each label and make your label image colored, or assign visually distinct grayscale value levels to each label value to make best use of the range of gray values at your disposal for visualization.
+
+\section{Colorbird Image Segmentation with Unsupervised Clustering: GMM }
+
+Repeat the segmentation exercise using GMM-based clustering. For each specific K, use the EM algorithm to fit a GMM with K components, and then use that GMM to do MAP-classification style cluster label assignments to pixels. Display results similarly for this alternative clustering method. Briefly comment on the reasons of any differences, if any.
+
+\end{document}
