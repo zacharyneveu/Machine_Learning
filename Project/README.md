@@ -1,8 +1,8 @@
 # Urban Sound Recognition
 
 ## Top Level Files
-load_data_x.m - loads data into the correct format
-neural_nets.m - trains feed-forward and residual networks
+load_data_x.m - loads data into the correct format  
+neural_nets.m - trains feed-forward and residual networks  
 
 
 ## Necessary Software
