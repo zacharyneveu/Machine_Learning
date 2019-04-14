@@ -1,4 +1,3 @@
-
 %% Exported from Jupyter Notebook
 % Run each section by placing your cursor in it and pressing Ctrl+Enter
 
