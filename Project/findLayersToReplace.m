@@ -1,3 +1,8 @@
+% Zachary Neveu | Tianyi Zhou | Christian Grenier
+%
+% This file is a supporting function from 
+% https://www.mathworks.com/help/deeplearning/examples/train-deep-learning-network-to-classify-new-images.html.
+%
 % findLayersToReplace(lgraph) finds the single classification layer and the
 % preceding learnable (fully connected or convolutional) layer of the layer
 % graph lgraph.

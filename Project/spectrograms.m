@@ -1,5 +1,9 @@
-%% Compute spectrograms for all files in an audio dataset and return the resulting data.
-% mostly from https://www.mathworks.com/help/deeplearning/examples/deep-learning-speech-recognition.html?s_tid=mwa_osa_a with some changes by Zach (single channel)
+% Zach Neveu | Christian Grenier | Tianyi Zhou
+%
+% Compute spectrograms for all files in an audio dataset and return the resulting data.
+% mostly from 
+% https://www.mathworks.com/help/deeplearning/examples/deep-learning-speech-recognition.html?s_tid=mwa_osa_a 
+% with some changes by Zach (single channel)
 
 function X = spectrograms(ads,segmentDuration,frameDuration,hopDuration,numBands)
 

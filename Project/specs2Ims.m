@@ -1,9 +1,10 @@
-%% Compute color images from magnitude spectrograms
-%{ 
-	When using pre-trained networks, the input sizes are fixed, as well as the number of channels.
-	This function allows for converting spectrograms generated with spectrograms.m into valid
-	input images.
-%}
+% Zach Neveu | Tianyi Zhou | Christian Grenier
+%
+% Compute color images from magnitude spectrograms
+%
+% When using pre-trained networks, the input sizes are fixed, as well as the number of channels.
+% This function allows for converting spectrograms generated with spectrograms.m into valid
+% input images.
 
 
 function Y = specs2Ims(X, sz)
